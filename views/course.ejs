@@ -1,0 +1,36 @@
+<!-- підлючили файл head.ejs -->
+<%- include('layouts/headAbout.ejs')%>
+
+<!-- section -->
+	
+<section class="inner_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+               <div class="full">
+                   <h3><%= data.Course%></h3>
+               </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+<!-- Вставили курси які витягнули з бази -->
+<div class="container">
+    <div class="row">
+        <% courses.forEach( course =>{ %>
+            <div class="col-md-4">
+                <h2><%= course.title %></h2>
+                <img src="<%= course.image %>" alt="<%= course.image %>">
+                <p><%= course.description%></p>
+                <p><%= course.price%></p>
+            </div>
+       <% })%>
+        
+
+        
+    </div>
+</div>
+
+<!-- підключаємо footer.ejs -->
+<%- include('layouts/footer.ejs')%>
